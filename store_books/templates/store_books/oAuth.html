@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'social:begin' 'github' %}">GitHub+</a>
+<br>
+{%for i in data%}
+Название: {{i.name}}<br>Цена: {{i.price}}р.<br> Жанр: {% for n in i.category.all %} {{n.name}} {% endfor %} <br>Автор: {{i.author_name}}<br> Рецензия:
+{{i.review_post}}<br>Автор рецензии: {{i.author_review_post}}
+<br>
+<br>
+<br>
+{%endfor%}
+</body>
+</html>
